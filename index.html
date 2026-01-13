@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jenny Curls - Premium Hair & Maintenance</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        .wig-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+        .whatsapp-float {
+            animation: pulse 2s infinite;
+        }
+        @keyframes pulse {
+            0% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0.7); }
+            70% { transform: scale(1.05); box-shadow: 0 0 0 10px rgba(34, 197, 94, 0); }
+            100% { transform: scale(1); box-shadow: 0 0 0 0 rgba(34, 197, 94, 0); }
+        }
+    </style>
+</head>
+<body class="bg-gray-50 font-sans">
+
+    <nav class="bg-purple-900 text-white shadow-lg sticky top-0 z-50">
+        <div class="container mx-auto px-4 py-3 flex justify-between items-center">
+            <div class="flex items-center space-x-2">
+                <i class="fas fa-crown text-yellow-300 text-2xl"></i>
+                <a href="#" class="text-2xl font-bold italic">Jenny Curls</a>
+            </div>
+            
+            <div class="hidden md:flex space-x-6">
+                <a href="#home" class="hover:text-yellow-300 transition">Home</a>
+                <a href="#products" class="hover:text-yellow-300 transition">Shop</a>
+                <a href="#services" class="hover:text-yellow-300 transition">Services</a>
+                <a href="#reviews" class="hover:text-yellow-300 transition">Reviews</a>
+            </div>
+            
+            <div class="flex items-center space-x-4">
+                <button id="cart-btn" class="relative">
+                    <i class="fas fa-shopping-basket text-xl"></i>
+                    <span id="cart-counter" class="absolute -top-2 -right-2 bg-yellow-400 text-purple-900 text-xs font-bold rounded-full h-5 w-5 flex items-center justify-center hidden">0</span>
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <section id="home" class="bg-gradient-to-r from-purple-800 to-pink-600 text-white py-16">
+        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
+            <div class="md:w-1/2 mb-8 md:mb-0">
+                <h1 class="text-4xl md:text-6xl font-bold mb-4">Elevate Your Beauty.</h1>
+                <p class="text-xl mb-6">Premium wigs, hair extensions, and professional maintenance in Nairobi.</p>
+                <div class="flex space-x-4">
+                    <a href="#products" class="bg-yellow-400 text-purple-900 font-bold py-3 px-8 rounded-full hover:bg-yellow-300 transition">Shop Now</a>
+                    <a href="#services" class="border-2 border-white py-3 px-8 rounded-full font-bold hover:bg-white hover:text-purple-800 transition">Book Services</a>
+                </div>
+            </div>
+            <div class="md:w-1/2 flex justify-center">
+                <img src="images/Gemini_Generated_Image_20ck4x20ck4x20ck.png" alt="Hero" class="rounded-2xl shadow-2xl w-full max-w-md border-4 border-white/20">
+            </div>
+        </div>
+    </section>
+
+    <section id="products" class="py-16 container mx-auto px-4">
+        <h2 class="text-3xl font-bold text-center mb-12 text-purple-900">Our Premium Collection</h2>
+        <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8">
+            
+            <div class="bg-white rounded-xl shadow-md overflow-hidden wig-card transition duration-300">
+                <img src="images/Soft Wave Wig.jpeg" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold">Silky Straight</h3>
+                    <p class="text-purple-900 font-bold text-lg mb-4">KSh 13,499</p>
+                    <div class="flex flex-col gap-2">
+                        <button class="bg-purple-900 text-white py-2 rounded-lg hover:bg-purple-800 add-to-cart" data-name="Silky Straight" data-price="3499">Add to Basket</button>
+                        <a href="https://wa.me/254725673215?text=Hi%20Jenny%20Curls,%20I'm%20inquiring%20about%20the%20Silky%20Straight%20Wig" class="text-center border border-green-500 text-green-600 py-2 rounded-lg hover:bg-green-50 font-medium transition"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Inquiry</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden wig-card transition duration-300">
+                <img src="images/human hair.jpeg" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold">Curly Goddess</h3>
+                    <p class="text-purple-900 font-bold text-lg mb-4">KSh 15,299</p>
+                    <div class="flex flex-col gap-2">
+                        <button class="bg-purple-900 text-white py-2 rounded-lg hover:bg-purple-800 add-to-cart" data-name="Curly Goddess" data-price="4299">Add to Basket</button>
+                        <a href="https://wa.me/254725673215?text=Hi%20Jenny%20Curls,%20I'm%20inquiring%20about%20the%20Curly%20Goddess" class="text-center border border-green-500 text-green-600 py-2 rounded-lg hover:bg-green-50 font-medium transition"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Inquiry</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden wig-card transition duration-300">
+                <img src="images/braids plaited.jpg" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold">Pixie Power</h3>
+                    <p class="text-purple-900 font-bold text-lg mb-4">KSh 7,800</p>
+                    <div class="flex flex-col gap-2">
+                        <button class="bg-purple-900 text-white py-2 rounded-lg hover:bg-purple-800 add-to-cart" data-name="Pixie Power" data-price="2800">Add to Basket</button>
+                        <a href="https://wa.me/254725673215?text=Hi%20Jenny%20Curls,%20Inquiry%20on%20Pixie%20Power" class="text-center border border-green-500 text-green-600 py-2 rounded-lg hover:bg-green-50 font-medium transition"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Inquiry</a>
+                    </div>
+                </div>
+            </div>
+
+            <div class="bg-white rounded-xl shadow-md overflow-hidden wig-card transition duration-300">
+                <img src="images/2image.png" class="w-full h-64 object-cover">
+                <div class="p-4">
+                    <h3 class="text-xl font-bold">Deep Wave Diva</h3>
+                    <p class="text-purple-900 font-bold text-lg mb-4">KSh 3,200</p>
+                    <div class="flex flex-col gap-2">
+                        <button class="bg-purple-900 text-white py-2 rounded-lg hover:bg-purple-800 add-to-cart" data-name="Deep Wave Diva" data-price="5200">Add to Basket</button>
+                        <a href="https://wa.me/254725673215?text=Hi%20Jenny%20Curls,%20Inquiry%20on%20Deep%20Wave" class="text-center border border-green-500 text-green-600 py-2 rounded-lg hover:bg-green-50 font-medium transition"><i class="fab fa-whatsapp mr-1"></i> WhatsApp Inquiry</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="py-16 bg-purple-50">
+        <div class="container mx-auto px-4 text-center">
+            <h2 class="text-3xl font-bold text-purple-900 mb-4">Hair Maintenance Services</h2>
+            <p class="text-gray-600 mb-12">Expert care for your artificial and natural hair products.</p>
+            
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-8 max-w-4xl mx-auto">
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <i class="fas fa-soap text-4xl text-purple-600 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Deep Wash & Condition</h3>
+                    <p class="text-gray-600 mb-4">Professional cleaning to restore softness and shine.</p>
+                    <p class="text-purple-900 font-bold mb-6">Starting at KSh 500</p>
+                    <a href="https://wa.me/254725673215?text=Hi%20Jenny%20Curls,%20I%20want%20to%20book%20a%20wig%20wash." class="bg-purple-900 text-white px-8 py-3 rounded-full font-bold inline-block hover:bg-purple-800 transition">Book via WhatsApp</a>
+                </div>
+                
+                <div class="bg-white p-8 rounded-2xl shadow-lg">
+                    <i class="fas fa-magic text-4xl text-pink-500 mb-4"></i>
+                    <h3 class="text-2xl font-bold mb-2">Repair & Styling</h3>
+                    <p class="text-gray-600 mb-4">Lace repairs, glue removal, and customized restyling.</p>
+                    <p class="text-purple-900 font-bold mb-6">Starting at KSh 1,200</p>
+                    <a href="https://wa.me/254725673215?text=Hi%20Jenny%20Curls,%20I%20need%20help%20with%20wig%20repairs." class="bg-pink-600 text-white px-8 py-3 rounded-full font-bold inline-block hover:bg-pink-500 transition">Enquire via WhatsApp</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="bg-gray-900 text-white py-12">
+        <div class="container mx-auto px-4 grid grid-cols-1 md:grid-cols-3 gap-8 text-center md:text-left">
+            <div>
+                <h3 class="text-xl font-bold mb-4">Jenny Curls</h3>
+                <p class="text-gray-400">Nairobi's trusted source for premium artificial hair.</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Contact Details</h4>
+                <p class="text-gray-400">Nairobi, Kenya</p>
+                <p class="text-gray-400">Phone: +254 725 673 215</p>
+            </div>
+            <div>
+                <h4 class="font-bold mb-4">Socials</h4>
+                <div class="flex justify-center md:justify-start space-x-6 text-2xl text-gray-400">
+                    <a href="https://www.instagram.com/glam_oursheaven" class="hover:text-pink-500"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="hover:text-blue-400"><i class="fab fa-facebook"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="text-center mt-12 text-gray-600 text-sm border-t border-gray-800 pt-6">
+            &copy; 2026 Jenny Curls. All Rights Reserved.
+        </div>
+    </footer>
+
+    <div id="cart-sidebar" class="fixed top-0 right-0 h-full w-full md:w-96 bg-white shadow-2xl z-[60] transform translate-x-full transition-transform duration-300 overflow-y-auto">
+        <div class="p-6">
+            <div class="flex justify-between items-center mb-8">
+                <h3 class="text-2xl font-bold text-purple-900">Your Selection</h3>
+                <button id="close-cart" class="text-gray-500 text-3xl">&times;</button>
+            </div>
+            <div id="cart-items" class="space-y-4">
+                <p class="text-gray-500 text-center py-10">Nothing selected yet.</p>
+            </div>
+            <div id="cart-summary" class="mt-8 pt-6 border-t hidden">
+                <div class="flex justify-between font-bold text-xl mb-6 text-purple-900">
+                    <span>Subtotal:</span>
+                    <span id="cart-total">KSh 0</span>
+                </div>
+                <button id="whatsapp-order" class="w-full bg-green-500 text-white py-4 rounded-xl font-bold text-lg hover:bg-green-600 flex items-center justify-center transition">
+                    <i class="fab fa-whatsapp mr-2 text-2xl"></i> Place Order via WhatsApp
+                </button>
+                <p class="text-center text-xs text-gray-500 mt-4">Prices exclude delivery fees.</p>
+            </div>
+        </div>
+    </div>
+
+    <a href="https://wa.me/254725673215" class="fixed bottom-6 right-6 bg-green-500 text-white w-16 h-16 rounded-full flex items-center justify-center shadow-2xl z-50 whatsapp-float transition hover:scale-110">
+        <i class="fab fa-whatsapp text-3xl"></i>
+    </a>
+
+    <script>
+        let selection = [];
+        const cartBtn = document.getElementById('cart-btn');
+        const cartSidebar = document.getElementById('cart-sidebar');
+        const closeCart = document.getElementById('close-cart');
+        const cartItemsDiv = document.getElementById('cart-items');
+        const cartCounter = document.getElementById('cart-counter');
+        const cartTotalSpan = document.getElementById('cart-total');
+        const cartSummary = document.getElementById('cart-summary');
+
+        // Toggle Sidebar
+        cartBtn.addEventListener('click', () => cartSidebar.classList.remove('translate-x-full'));
+        closeCart.addEventListener('click', () => cartSidebar.classList.add('translate-x-full'));
+
+        // Selection Logic
+        document.querySelectorAll('.add-to-cart').forEach(button => {
+            button.addEventListener('click', () => {
+                const name = button.getAttribute('data-name');
+                const price = parseInt(button.getAttribute('data-price'));
+                selection.push({name, price});
+                updateUI();
+                cartSidebar.classList.remove('translate-x-full');
+            });
+        });
+
+        function updateUI() {
+            cartCounter.innerText = selection.length;
+            cartCounter.classList.toggle('hidden', selection.length === 0);
+            
+            if(selection.length === 0) {
+                cartItemsDiv.innerHTML = '<p class="text-gray-500 text-center py-10">Nothing selected yet.</p>';
+                cartSummary.classList.add('hidden');
+            } else {
+                cartItemsDiv.innerHTML = selection.map((item, index) => `
+                    <div class="flex justify-between items-center bg-gray-50 p-4 rounded-xl border border-gray-100">
+                        <div>
+                            <p class="font-bold text-gray-800">${item.name}</p>
+                            <p class="text-purple-700 font-semibold">KSh ${item.price.toLocaleString()}</p>
+                        </div>
+                        <button onclick="removeSelection(${index})" class="text-red-400 hover:text-red-600 transition p-2"><i class="fas fa-trash-alt"></i></button>
+                    </div>
+                `).join('');
+                
+                const total = selection.reduce((sum, item) => sum + item.price, 0);
+                cartTotalSpan.innerText = `KSh ${total.toLocaleString()}`;
+                cartSummary.classList.remove('hidden');
+            }
+        }
+
+        window.removeSelection = (index) => {
+            selection.splice(index, 1);
+            updateUI();
+        };
+
+        // WhatsApp Ordering Logic
+        document.getElementById('whatsapp-order').addEventListener('click', () => {
+            const total = selection.reduce((sum, item) => sum + item.price, 0);
+            const itemList = selection.map(i => i.name).join(', ');
+            const message = `Hi Jenny Curls! I am interested in purchasing: ${itemList}. The total selection value is KSh ${total.toLocaleString()}. Please let me know the next steps for delivery.`;
+            window.location.href = `https://wa.me/254725673215?text=${encodeURIComponent(message)}`;
+        });
+    </script>
+</body>
+</html>
