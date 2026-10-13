@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Wig & Braids Gallery | Jenny Curls</title>
+    <style>
+        :root {
+            --primary-bg: #2b0c3f;
+            --header-bg: #1f072e;
+            --card-bg: #3c1256;
+            --accent-green: #25d366;
+            --text-color: #ffffff;
+            --gold-color: #ffd700;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+
+        body {
+            background-color: var(--primary-bg);
+            color: var(--text-color);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+        }
+
+        /* Header Styles */
+        header {
+            background-color: var(--header-bg);
+            padding: 15px 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            border-bottom: 2px solid #4a156b;
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .logo-container {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo-container img {
+            height: 45px;
+            object-fit: contain;
+            border-radius: 4px;
+        }
+
+        .brand-name {
+            font-size: 1.5rem;
+            font-weight: bold;
+            color: var(--gold-color);
+            letter-spacing: 1px;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 25px;
+        }
+
+        nav ul li a {
+            color: var(--text-color);
+            text-decoration: none;
+            font-weight: 500;
+            transition: color 0.3s;
+        }
+
+        nav ul li a:hover, nav ul li a.active {
+            color: var(--gold-color);
+        }
+
+        /* Floating Filter Navigation Sub-bar */
+        .filter-nav {
+            background-color: #1a0528;
+            padding: 12px 5%;
+            display: flex;
+            gap: 10px;
+            overflow-x: auto;
+            white-space: nowrap;
+            border-bottom: 1px solid #4a156b;
+            box-shadow: 0 4px 10px rgba(0,0,0,0.3);
+            scrollbar-width: thin;
+        }
+
+        .filter-nav::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .filter-nav::-webkit-scrollbar-thumb {
+            background-color: #4a156b;
+            border-radius: 3px;
+        }
+
+        .filter-btn {
+            background-color: #310f48;
+            color: var(--text-color);
+            border: 1px solid #571b7e;
+            padding: 8px 16px;
+            border-radius: 20px;
+            cursor: pointer;
+            font-size: 0.9rem;
+            text-transform: capitalize;
+            transition: all 0.3s ease;
+        }
+
+        .filter-btn:hover, .filter-btn.active {
+            background-color: var(--gold-color);
+            color: var(--primary-bg);
+            border-color: var(--gold-color);
+            font-weight: 600;
+        }
+
+        /* Main Gallery Section */
+        .gallery-container {
+            max-width: 1200px;
+            margin: 40px auto;
+            padding: 0 20px;
+            flex-grow: 1;
+            width: 100%;
+        }
+
+        .section-header {
+            text-align: center;
+            margin-bottom: 40px;
+        }
+
+        .section-header span {
+            background-color: #4a156b;
+            color: var(--gold-color);
+            padding: 6px 15px;
+            border-radius: 20px;
+            font-size: 0.85rem;
+            font-weight: bold;
+            letter-spacing: 1px;
+            text-transform: uppercase;
+        }
+
+        .section-header h1 {
+            font-size: 2.5rem;
+            margin: 15px 0 10px;
+        }
+
+        .section-header p {
+            color: #d1b3e0;
+            font-size: 1.05rem;
+        }
+
+        /* Grid Layout for the 5 Images */
+        .image-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+        }
+
+        .card {
+            background-color: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+            display: flex;
+            flex-direction: column;
+            transition: transform 0.3s;
+            padding: 10px;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card-img-wrapper {
+            width: 100%;
+            height: 280px;
+            background-color: #1f072e;
+            position: relative;
+            border-radius: 8px;
+            overflow: hidden;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .card-img-wrapper img {
+            width: 100%;
+            height: 100%;
+            object-fit: contain; /* Uncropped images */
+            border-radius: 8px;
+        }
+
+        .card-content {
+            padding: 12px 5px 5px;
+            display: flex;
+            flex-direction: column;
+            flex-grow: 1;
+            justify-content: space-between;
+        }
+
+        .card-title {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 5px;
+        }
+
+        .card-subtitle {
+            font-size: 0.85rem;
+            color: #c4a4d4;
+            margin-bottom: 15px;
+        }
+
+        .whatsapp-btn {
+            background-color: var(--accent-green);
+            color: white;
+            border: none;
+            padding: 10px;
+            border-radius: 6px;
+            font-weight: 600;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: background 0.2s;
+        }
+
+        .whatsapp-btn:hover {
+            background-color: #1ebe5d;
+        }
+
+        /* Footer */
+        footer {
+            background-color: var(--header-bg);
+            text-align: center;
+            padding: 25px 20px;
+            margin-top: 60px;
+            border-top: 2px solid #4a156b;
+            color: #bfa3d1;
+            font-size: 0.9rem;
+        }
+    </style>
+</head>
+<body>
+
+    <!-- Header with Logo -->
+    <header>
+        <div class="logo-container">
+            <img src="images/Gemini_Generated_Image_20ck4x20ck4x20ck.png" alt="Jenny Curls Logo">
+            <span class="brand-name">JennyCurls</span>
+        </div>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="shop.html">Shop Hair</a></li>
+                <li><a href="gallery.html" class="active">Gallery</a></li>
+                <li><a href="services.html">Salon Services</a></li>
+                <li><a href="contact.html">Contact</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Floating Filter Sub-bar Below Header Border -->
+    <div class="filter-nav" id="filterNav">
+        <!-- Generated dynamically via script -->
+    </div>
+
+    <!-- Gallery Section -->
+    <main class="gallery-container">
+        <div class="section-header">
+            <span>Photo Lookbook</span>
+            <h1 id="categoryTitle">Lace Style Collection</h1>
+            <p>Explore our premium selection. Tap to inquire instantly on WhatsApp!</p>
+        </div>
+
+        <div class="image-grid" id="imageGrid">
+            <!-- 5 Dynamic Cards populated via JavaScript -->
+        </div>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2026 Jenny Curls Hair Studio. All Rights Reserved.</p>
+    </footer>
+
+    <script>
+        // Categories list
+        const categories = [
+            "lace", "font", "curly", "transparent", "hair", 
+            "long", "pink", "brown", "bob", "short", "wavy", "blonde", "frontal"
+        ];
+
+        const filterNav = document.getElementById('filterNav');
+        const imageGrid = document.getElementById('imageGrid');
+        const categoryTitle = document.getElementById('categoryTitle');
+
+        // Initialize Filter Buttons
+        categories.forEach((cat, index) => {
+            const btn = document.createElement('button');
+            btn.className = `filter-btn ${index === 0 ? 'active' : ''}`;
+            btn.textContent = cat;
+            btn.onclick = () => loadCategory(cat, btn);
+            filterNav.appendChild(btn);
+        });
+
+        // Function to load 5 images for the selected category folder
+        function loadCategory(categoryName, selectedBtn) {
+            // Update active button state
+            document.querySelectorAll('.filter-btn').forEach(b => b.classList.remove('active'));
+            selectedBtn.classList.add('active');
+
+            // Update section title
+            categoryTitle.textContent = `${categoryName.charAt(0).toUpperCase() + categoryName.slice(1)} Style Collection`;
+
+            // Clear previous images
+            imageGrid.innerHTML = '';
+
+            // Generate exactly 5 cards based on the folder path
+            for (let i = 1; i <= 5; i++) {
+                const card = document.createElement('div');
+                card.className = 'card';
+
+                const imagePathJpg = `images/${categoryName}/${categoryName}${i}.jpg`;
+                const imagePathPng = `images/${categoryName}/${categoryName}${i}.png`;
+                const imagePathJfif = `images/${categoryName}/${categoryName}${i}.jfif`;
+                const whatsappLink = `https://wa.me/254725673215?text=Hello%20Jenny%20Curls,%20I%20am%20interested%20in%20the%20${categoryName}%20style%20item%20${i}`;
+
+                card.innerHTML = `
+                    <div class="card-img-wrapper">
+                        <img src="${imagePathJpg}" 
+                             onerror="this.onerror=null; this.src='${imagePathPng}'; this.onerror=function(){this.src='${imagePathJfif}'; this.onerror=function(){this.src='images/Gemini_Generated_Image_20ck4x20ck4x20ck.png';}};" 
+                             alt="${categoryName} style ${i}">
+                    </div>
+                    <div class="card-content">
+                        <div>
+                            <div class="card-title">${categoryName.toUpperCase()} Style 0${i}</div>
+                            <div class="card-subtitle">100% Virgin Hair • Jenny Curls</div>
+                        </div>
+                        <a href="${whatsappLink}" target="_blank" class="whatsapp-btn">
+                            <span>💬 Inquire on WhatsApp</span>
+                        </a>
+                    </div>
+                `;
+                imageGrid.appendChild(card);
+            }
+        }
+
+        // Load default category (lace) on page start
+        loadCategory(categories[0], filterNav.querySelector('.filter-btn'));
+    </script>
+</body>
+</html>
